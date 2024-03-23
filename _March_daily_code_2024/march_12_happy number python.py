@@ -38,7 +38,7 @@ Update n with the sum.
 If n is already in the set, return False (indicating a cycle).
 Otherwise, add n to the set.
 If the loop terminates (i.e., n becomes 1), return True."""
-def is_happy(n):
+"""def is_happy(n):
     seen = set()  # Set to store seen numbers
     while n != 1:
         # Convert n to string, iterate over digits, square them, and sum
@@ -47,7 +47,19 @@ def is_happy(n):
         if n in seen:
             return False
         seen.add(n)  # Add n to the set
-    return True  # n becomes 1, so it's a happy number
+    return True  # n becomes 1, so it's a happy number"""
+
+def is_happy(n):
+    seen = set()
+    while n!=1:
+
+        n= sum(int(digit)**2 for digit in str(n)  )
+        if n in seen:
+                return False
+        seen.add(n)
+        
+    return True
+
 
 # Test cases
 print(is_happy(19))  # Output: True
